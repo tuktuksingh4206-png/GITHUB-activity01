@@ -1,0 +1,36 @@
+name: Java Test
+
+on:
+  push:
+    branch:
+      -main
+
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v4
+
+      - name: set up java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Complie java app
+        run:  javac src/main/java/com/example/WelcomeApp.java
+
+      - name: Run java app
+        run:  java src/main/java/com/example/WelcomeApp.java &
+
+      - name: wait for server to start
+        run: sleep 2
+
+      - name: testing using curl command
+        run:  curl http://localhost:8080
+
+      - name: final sleep
+        run: sleep 30
