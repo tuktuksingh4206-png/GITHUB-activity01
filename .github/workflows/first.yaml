@@ -1,3 +1,11 @@
+name: amish java
+
+on:
+  push:
+    branch:
+      - main
+
+
 job:
   first-job:
     runs-on: ubuntu-latest
