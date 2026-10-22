@@ -1,0 +1,22 @@
+name: stage 2 yaml file
+
+on:
+  push:
+    branch:
+      -main
+      -dev
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: cloning the repo
+      uses: actions/checkout@v4
+
+    - name: welcome message
+      run: echo "Hello all"
+  
+    - name: list files
+      run: ls
+
+    - name: read file
+      run: cat README.md
