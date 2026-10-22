@@ -6,7 +6,7 @@ on:
       - main
 
 
-job:
+jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
