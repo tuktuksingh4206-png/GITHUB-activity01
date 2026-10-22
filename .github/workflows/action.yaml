@@ -7,16 +7,17 @@ on:
       -dev
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: cloning the repo
-      uses: actions/checkout@v4
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+     - name: cloning the repo
+       uses: actions/checkout@v4
 
-    - name: welcome message
-      run: echo "Hello all"
+     - name: welcome message
+       run: echo "Hello all"
   
-    - name: list files
-      run: ls
+     - name: list files
+       run: ls
 
-    - name: read file
-      run: cat README.md
+     - name: read file
+       run: cat README.md
